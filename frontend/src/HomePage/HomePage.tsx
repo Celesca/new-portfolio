@@ -1,8 +1,10 @@
+import './HomePage.css';
+
 const HomePage = () => {
   return (
     <div>
         <div>
-            <img src="yoimiya.jpg" alt="yoimya" width="300" height="300" className="" />
+            <img src="yoimiya.jpg" alt="yoimya" width="300" height="300" className="hero-image" />
         </div>
 
         <div>
