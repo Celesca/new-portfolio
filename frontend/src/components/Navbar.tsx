@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <nav className="flex items-center">
         <div className="ps-8">
-            <h1 className="text-2xl pt-4">Celescadev</h1>
+            <h1 className="text-lg pt-4">Celescadev</h1>
         </div>
         <div>
             <ul className="flex justify-end pt-4 pr-8">
