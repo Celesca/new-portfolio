@@ -2,8 +2,8 @@ import './Navbar.css'
 
 const Navbar = () => {
   return (
-    <nav>
-        <div className="ps-8 pt-2">
+    <nav className="flex items-center">
+        <div className="ps-8">
             <h1 className="text-2xl pt-4">Celescadev</h1>
         </div>
         <div>
@@ -23,4 +23,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;
