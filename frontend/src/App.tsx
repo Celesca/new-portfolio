@@ -5,13 +5,13 @@ import {
   FileOutlined,
   PieChartOutlined,
   TeamOutlined,
-  UsbFilled,
   UserOutlined,
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Layout, Menu, theme } from 'antd';
+import { Layout, Menu } from 'antd';
+import HomePage from './HomePage/HomePage';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Sider } = Layout;
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -43,39 +43,48 @@ const items: MenuItem[] = [
 
 const App: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
-  const {
-    token: { colorBgContainer, borderRadiusLG },
-  } = theme.useToken();
+  const [selectedKeys, setSelectedKeys] = useState(['1']);
+
+  const handleMenuClick: MenuProps['onClick'] = (e) => {
+    setSelectedKeys([e.key]);
+  };
+
+  const renderContent = () => {
+    switch (selectedKeys[0]) {
+      case '1':
+        return <HomePage />;
+      case '2':
+        return <div>Option 2 Content</div>;
+      case '3':
+        return <div>Tom's Content</div>;
+      case '4':
+        return <div>Bill is a cat.</div>;
+      case '5':
+        return <div>Alex's Content</div>;
+      case '6':
+        return <div>Team 1 Content</div>;
+      case '8':
+        return <div>Team 2 Content</div>;
+      case '9':
+        return <div>Files Content</div>;
+      default:
+        return <div>Default Content</div>;
+    }
+  };
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
         <div className="demo-logo-vertical" />
-        <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
+        <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} onClick={handleMenuClick} />
       </Sider>
-      <Layout>
-        <Header className="text-2xl pl-4 pt-6 font-bold text-amber-400 bg-gray-300">
-        <div>
-          <UsbFilled className="pr-4"/>
-            <span>Hello World</span>
+      <Layout className="site-layout">
+        <Layout.Header className="site-layout-background" style={{ padding: 0 }} />
+        <Layout.Content style={{ margin: '0 16px' }}>
+          <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+            {renderContent()}
           </div>
-          </Header>
-
-        <Content style={{ margin: '0 16px' }}>
-          <div
-            style={{
-              padding: 24,
-              minHeight: 360,
-              background: colorBgContainer,
-              borderRadius: borderRadiusLG,
-            }}
-          >
-            Bill is a cat.
-          </div>
-        </Content>
-        <Footer style={{ textAlign: 'center' }}>
-          Ant Design ©{new Date().getFullYear()} Created by Ant UED
-        </Footer>
+        </Layout.Content>
       </Layout>
     </Layout>
   );

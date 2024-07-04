@@ -1,17 +1,38 @@
+import { Layout, theme } from 'antd';
 import './HomePage.css';
+import { Content, Footer, Header } from 'antd/es/layout/layout';
+import { UsbFilled } from '@ant-design/icons';
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
+  const {
+    token: { colorBgContainer, borderRadiusLG },
+  } = theme.useToken();
+  
   return (
-    <div className="flex items-center mt-8">
-        <div>
-            <img src="yoimiya.jpg" alt="yoimya" width="300" height="300" className="hero-image" />
-        </div>
+    <Layout>
+    <Header className="text-2xl pl-4 pt-6 font-bold text-amber-400 bg-gray-300">
+    <div>
+      <UsbFilled className="pr-4"/>
+        <span>Hello World</span>
+      </div>
+      </Header>
 
-        <div>
-            <p>My name is Celeste. I am a full stack developer.</p>
-        </div>
-       
-    </div>
+    <Content style={{ margin: '0 16px' }}>
+      <div
+        style={{
+          padding: 24,
+          minHeight: 360,
+          background: colorBgContainer,
+          borderRadius: borderRadiusLG,
+        }}
+      >
+        Bill is a cat.
+      </div>
+    </Content>
+    <Footer style={{ textAlign: 'center' }}>
+      Ant Design ©{new Date().getFullYear()} Created by Ant UED
+    </Footer>
+  </Layout>
   )
 }
 
