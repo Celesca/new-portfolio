@@ -1,13 +1,34 @@
 import { Layout, theme } from 'antd';
 import { Content, Footer, Header } from 'antd/es/layout/layout';
 import { BookOutlined } from '@ant-design/icons';
+import { useEffect, useState } from 'react';
+import axios, { AxiosResponse } from 'axios';
 
 const BookPage: React.FC = () => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
+
+  interface Book {
+    id: number;
+    title: string;
+    author: string;
+    description: string;
+  }
+
+  const { improvedBooks , setImprovedBooks } = useState([])
+
+  const fetchBooks = async () => {
+    const response: AxiosResponse<Book[]> = await axios.get('http://localhost:8000/api/books/')
+    setImprovedBooks(response.data)
+  }
+
+    useEffect(() => {
+        fetchBooks()
+    }, [])
   
   return (
+
     <Layout>
     <Header className="text-2xl pl-4 pt-6 font-bold text-black bg-gray-300">
     <div>
@@ -30,7 +51,15 @@ const BookPage: React.FC = () => {
         <div>
             <h1 className="text-2xl pl-4 underline font-semibold">หนังสือพัฒนาตนเอง</h1>
             <div>
-
+                {improvedBooks.map((book: Book) => (
+                    <div key={book.id} className="flex justify-between">
+                        <div>
+                            <h2 className="text-xl font-semibold">{book.title}</h2>
+                            <p className="text-lg">{book.author}</p>
+                            <p className="text-lg">{book.description}</p>
+                        </div>
+                    </div>
+                ))}
             </div>
         </div>
         
