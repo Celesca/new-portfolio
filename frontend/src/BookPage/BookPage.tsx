@@ -16,10 +16,15 @@ const BookPage: React.FC = () => {
     description: string;
   }
 
-  const { improvedBooks , setImprovedBooks } = useState([])
+  const { improvedBooks , setImprovedBooks } = useState<Book[]>([])
 
   const fetchBooks = async () => {
     const response: AxiosResponse<Book[]> = await axios.get('http://localhost:8000/api/books/')
+    console.log(response)
+    if (response.status !== 200) {
+      console.error('Failed to fetch books')
+      return
+    }
     setImprovedBooks(response.data)
   }
 
@@ -51,15 +56,20 @@ const BookPage: React.FC = () => {
         <div>
             <h1 className="text-2xl pl-4 underline font-semibold">หนังสือพัฒนาตนเอง</h1>
             <div>
-                {improvedBooks.map((book: Book) => (
-                    <div key={book.id} className="flex justify-between">
-                        <div>
-                            <h2 className="text-xl font-semibold">{book.title}</h2>
-                            <p className="text-lg">{book.author}</p>
-                            <p className="text-lg">{book.description}</p>
+                {improvedBooks.length === 0 ? (
+                    <div>No content</div>
+                ) : (
+                    improvedBooks.map((book: Book) => (
+                        <div key={book.id} className="flex justify-between">
+                            <div>
+                                <h2 className="text-xl font-semibold">{book.title}</h2>
+                                <p className="text-lg">{book.author}</p>
+                                <p className="text-lg">{book.description}</p>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))
+                )}
+                
             </div>
         </div>
         
