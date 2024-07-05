@@ -9,8 +9,8 @@ import {
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Layout, Menu } from 'antd';
-import HomePage from './HomePage/HomePage';
-import BookPage from './BookPage/BookPage';
+import HomePage from './pages/HomePage/HomePage';
+import BookPage from './pages/BookPage/BookPage';
 
 const { Sider } = Layout;
 

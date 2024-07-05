@@ -3,18 +3,13 @@ import { Content, Footer, Header } from 'antd/es/layout/layout';
 import { BookOutlined } from '@ant-design/icons';
 import { useEffect, useState } from 'react';
 import axios, { AxiosResponse } from 'axios';
+import { Book } from '../../models/Book';
+import OneBook from '../../components/OneBook';
 
 const BookPage: React.FC = () => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
-
-  interface Book {
-    id: number;
-    title: string;
-    author: string;
-    description: string;
-  }
 
   const [improvedBooks , setImprovedBooks] = useState<Book[]>([])
 
@@ -60,14 +55,8 @@ const BookPage: React.FC = () => {
                 {!improvedBooks?.length ? (
                     <div>No content</div>
                 ) : (
-                    improvedBooks.map((book: Book) => (
-                        <div key={book.id} className="flex justify-between">
-                            <div>
-                                <h2 className="text-xl font-semibold">{book.title}</h2>
-                                <p className="text-lg">{book.author}</p>
-                                <p className="text-lg">{book.description}</p>
-                            </div>
-                        </div>
+                    improvedBooks.map((book: Book, index) => (
+                      <OneBook key={index} book={book} />
                     ))
                 )}
                 
