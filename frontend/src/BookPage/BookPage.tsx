@@ -19,7 +19,7 @@ const BookPage: React.FC = () => {
   const { improvedBooks , setImprovedBooks } = useState<Book[]>([])
 
   const fetchBooks = async () => {
-    const response: AxiosResponse<Book[]> = await axios.get('http://localhost:8000/api/books/')
+    const response: AxiosResponse<Book[]> = await axios.get('http://localhost:3000/api/books/')
     console.log(response)
     if (response.status !== 200) {
       console.error('Failed to fetch books')
@@ -56,7 +56,7 @@ const BookPage: React.FC = () => {
         <div>
             <h1 className="text-2xl pl-4 underline font-semibold">หนังสือพัฒนาตนเอง</h1>
             <div>
-                {improvedBooks.length === 0 ? (
+                {!improvedBooks?.length ? (
                     <div>No content</div>
                 ) : (
                     improvedBooks.map((book: Book) => (

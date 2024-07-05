@@ -18,4 +18,6 @@ const books: Book[] = [
   },
 ];
 
-bookRouter.get('/books', (req: Request, res: Response) => {});
+bookRouter.get('/books', (req: Request, res: Response) => {
+  res.json(books);
+});
