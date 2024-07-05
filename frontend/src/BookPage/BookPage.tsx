@@ -16,7 +16,7 @@ const BookPage: React.FC = () => {
     description: string;
   }
 
-  const { improvedBooks , setImprovedBooks } = useState<Book[]>([])
+  const [improvedBooks , setImprovedBooks] = useState<Book[]>([])
 
   const fetchBooks = async () => {
     const response: AxiosResponse<Book[]> = await axios.get('http://localhost:3000/api/books/')
@@ -25,6 +25,7 @@ const BookPage: React.FC = () => {
       console.error('Failed to fetch books')
       return
     }
+    console.log(response.data)
     setImprovedBooks(response.data)
   }
 
