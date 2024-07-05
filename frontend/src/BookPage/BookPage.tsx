@@ -1,6 +1,6 @@
 import { Layout, theme } from 'antd';
 import { Content, Footer, Header } from 'antd/es/layout/layout';
-import { UsbFilled } from '@ant-design/icons';
+import { BookOutlined } from '@ant-design/icons';
 
 const BookPage: React.FC = () => {
   const {
@@ -9,10 +9,10 @@ const BookPage: React.FC = () => {
   
   return (
     <Layout>
-    <Header className="text-2xl pl-4 pt-6 font-bold text-amber-400 bg-gray-300">
+    <Header className="text-2xl pl-4 pt-6 font-bold text-black bg-gray-300">
     <div>
-      <UsbFilled className="pr-4"/>
-        <span>Hello World</span>
+    <BookOutlined className="pr-4" />
+        <span> Books</span>
       </div>
       </Header>
 
@@ -24,8 +24,16 @@ const BookPage: React.FC = () => {
           background: colorBgContainer,
           borderRadius: borderRadiusLG,
         }}
+        className="mt-12"
       >
-        Bill is a cat.
+
+        <div>
+            <h1 className="text-2xl pl-4 underline font-semibold">หนังสือพัฒนาตนเอง</h1>
+            <div>
+
+            </div>
+        </div>
+        
       </div>
     </Content>
     <Footer style={{ textAlign: 'center' }}>

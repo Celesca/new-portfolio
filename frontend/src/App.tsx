@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import {
-  DesktopOutlined,
+  BookOutlined,
   FileOutlined,
   PieChartOutlined,
   TeamOutlined,
@@ -10,6 +10,7 @@ import {
 import type { MenuProps } from 'antd';
 import { Layout, Menu } from 'antd';
 import HomePage from './HomePage/HomePage';
+import BookPage from './BookPage/BookPage';
 
 const { Sider } = Layout;
 
@@ -30,8 +31,8 @@ function getItem(
 }
 
 const items: MenuItem[] = [
-  getItem('Option 1', '1', <PieChartOutlined />),
-  getItem('Option 2', '2', <DesktopOutlined />),
+  getItem('Home', '1', <PieChartOutlined />),
+  getItem('Books', '2', <BookOutlined />),
   getItem('User', 'sub1', <UserOutlined />, [
     getItem('Tom', '3'),
     getItem('Bill', '4'),
@@ -54,7 +55,7 @@ const App: React.FC = () => {
       case '1':
         return <HomePage />;
       case '2':
-        return <div>Option 2 Content</div>;
+        return <BookPage />;
       case '3':
         return <div>Tom's Content</div>;
       case '4':
