@@ -1,4 +1,4 @@
-import { Layout, theme } from 'antd';
+import { Layout, List, theme } from 'antd';
 import { Content, Footer, Header } from 'antd/es/layout/layout';
 import { BookOutlined } from '@ant-design/icons';
 import { useEffect, useState } from 'react';
@@ -55,10 +55,17 @@ const BookPage: React.FC = () => {
                 {!improvedBooks?.length ? (
                     <div>No content</div>
                 ) : (
-                    improvedBooks.map((book: Book, index) => (
+
+                  <List
+                  grid={{ gutter: 16, column: 4 }}
+                  dataSource={improvedBooks}
+                  renderItem={(book: Book, index) => (
+                    <List.Item>
                       <OneBook key={index} book={book} />
-                    ))
-                )}
+                    </List.Item>
+                  )}
+                /> )
+                }
                 
             </div>
         </div>

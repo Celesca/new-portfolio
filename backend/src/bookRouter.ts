@@ -6,15 +6,18 @@ export const bookRouter = Router();
 const books: Book[] = [
   {
     id: 1,
-    title: 'Book 1',
-    author: 'Author 1',
-    description: 'Description 1',
+    title: 'AI and Machine Learning for Coders เส้นทางและหลักการสู่การโค้ด AI',
+    author: 'Laurence Moroney',
+    description: 'เรียนรู้การเขียนโค้ด AI และ Machine Learning ในภาษา Python จากผู้เชี่ยวชาญ',
+    image: 'https://bci.kinokuniya.com/jsp/images/book-img/97861/97861682/9786168282281.JPG',
   },
   {
     id: 2,
-    title: 'Book 2',
-    author: 'Author 2',
-    description: 'Description 2',
+    title: 'การพัฒนาแอพพลิเคชัน Machine Learning',
+    author: 'Emmanuel Ameisen',
+    description: 'เริ่มจากแนวคิดสู่ตัวผลิตภัณฑ์ เรียบเรียงด้วยสำนวนไทย อ่านเข้าใจง่าย',
+    image:
+      'https://images-se-ed.com/ws/Storage/Originals/978616/828/9786168282182L.jpg?h=49d6d0999791ec37bbf607d9ae295ae5',
   },
 ];
 
