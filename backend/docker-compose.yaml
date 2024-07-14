@@ -9,7 +9,7 @@ services:
       POSTGRES_DB: book-store
     volumes:
       - book-data:/var/lib/postgresql/data
-      - ./db_setup/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "5432:5432"
     networks:
