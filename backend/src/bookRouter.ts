@@ -1,3 +1,4 @@
+import { pool } from 'db/connection';
 import { Router, Request, Response } from 'express';
 import { Book } from 'models/book';
 
@@ -22,7 +23,13 @@ const books: Book[] = [
 ];
 
 bookRouter.get('/books', (req: Request, res: Response) => {
-  res.json(books);
+  pool.query('SELECT * FROM books', (error, result) => {
+    if (error) {
+      res.status(500).send(error.message);
+      return;
+    }
+    res.status(200).json(result.rows);
+  });
 });
 
 bookRouter.post('/books', (req: Request, res: Response) => {
