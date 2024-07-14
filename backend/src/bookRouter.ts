@@ -24,3 +24,9 @@ const books: Book[] = [
 bookRouter.get('/books', (req: Request, res: Response) => {
   res.json(books);
 });
+
+bookRouter.post('/books', (req: Request, res: Response) => {
+  const newBook: Book = req.body;
+  books.push(newBook);
+  res.status(201).json(newBook);
+});
