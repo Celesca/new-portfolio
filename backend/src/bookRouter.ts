@@ -28,3 +28,38 @@ bookRouter.post('/books', (req: Request, res: Response) => {
     },
   );
 });
+
+bookRouter.delete('/books/:id', (req: Request, res: Response) => {
+  const id = req.params.id;
+  pool.query('DELETE FROM books WHERE id = $1', [id], (error) => {
+    if (error) {
+      res.status(500).send(error.message);
+      return;
+    }
+    res.status(200).send('Book deleted!');
+  });
+});
+
+bookRouter.patch('/books/:id', (req: Request, res: Response) => {
+  const id = req.params.id;
+  const updatedBook: Book = req.body;
+  pool.query(
+    'UPDATE books SET title = $1, author = $2, description = $3, image = $4, year = $5, category = $6 WHERE id = $7',
+    [
+      updatedBook.title,
+      updatedBook.author,
+      updatedBook.description,
+      updatedBook.image,
+      updatedBook.year,
+      updatedBook.category,
+      id,
+    ],
+    (error) => {
+      if (error) {
+        res.status(500).send(error.message);
+        return;
+      }
+      res.status(200).send('Book updated!');
+    },
+  );
+});
