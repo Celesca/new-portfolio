@@ -31,11 +31,11 @@ const BookPage: React.FC = () => {
   return (
 
     <Layout>
-    <Header className="text-2xl pl-4 pt-6 font-bold text-black bg-gray-300">
+    <Header className="text-2xl pl-4 pt-6 font-bold text-black bg-white">
     <div>
-    <BookOutlined className="pr-4" />
+    <BookOutlined className="pr-4 pl-12" />
         <span> Books</span>
-      </div>
+    </div>
       </Header>
 
     <Content style={{ margin: '0 16px' }}>
@@ -57,7 +57,7 @@ const BookPage: React.FC = () => {
                 ) : (
 
                   <List
-                  grid={{ gutter: 16, column: 4 }}
+                  grid={{ gutter: 16, column: 5 }}
                   dataSource={improvedBooks}
                   renderItem={(book: Book, index) => (
                     <List.Item>
@@ -73,7 +73,7 @@ const BookPage: React.FC = () => {
       </div>
     </Content>
     <Footer style={{ textAlign: 'center' }}>
-      Ant Design ©{new Date().getFullYear()} Created by Ant UED
+      Celescadev ©{new Date().getFullYear()}
     </Footer>
   </Layout>
   )
