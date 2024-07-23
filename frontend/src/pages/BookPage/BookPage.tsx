@@ -60,19 +60,19 @@ const BookPage: React.FC = () => {
         <form>
           <div className="flex flex-col">
             <label htmlFor="title" className="mb-4">Title</label>
-              <input type="text" name="title" className="mb-4 py-2 px-2 outline-black rounded-lg border-2 border-black" id="title" placeholder="Ex. Software" />
+              <input type="text" name="title" className="mb-4 py-2 px-2 outline-black rounded-lg border-2 border-gray-500" id="title" placeholder="Ex. Software" />
           </div>
           <div className="flex flex-col">
             <label htmlFor="author" className="mb-4">Author</label>
-            <input type="text" name="author" className="mb-4 py-2 px-2 outline-black rounded-lg border-2 border-black" id="author" placeholder="Ex. John Carter"/>
+            <input type="text" name="author" className="mb-4 py-2 px-2 outline-black rounded-lg border-2 border-gray-500" id="author" placeholder="Ex. John Carter"/>
           </div>
           <div className="flex flex-col">
             <label htmlFor="description">Description</label>
-            <textarea name="description" className="mb-4 py-2 px-2 outline-black rounded-lg border-2 border-black" id="description" placeholder="Ex. The book that" />
+            <textarea name="description" className="mb-4 py-2 px-2 outline-black rounded-lg border-2 border-gray-500" id="description" placeholder="Ex. The book that" />
           </div>
           <div className="flex flex-col">
             <label htmlFor="cover">Cover URL</label>
-            <input type="text" name="cover" className="mb-4 py-2 px-2 outline-black rounded-lg border-2 border-black" id="cover" placeholder="Ex. https://ImageURL.com"/>
+            <input type="text" name="cover" className="mb-4 py-2 px-2 outline-black rounded-lg border-2 border-gray-500" id="cover" placeholder="Ex. https://ImageURL.com"/>
           </div>
         </form>
       </Modal>
