@@ -14,6 +14,11 @@ const BookPage: React.FC = () => {
   const [improvedBooks, setImprovedBooks] = useState<Book[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [description, setDescription] = useState("");
+  const [cover, setCover] = useState("");
+
   const fetchBooks = async () => {
     const response: AxiosResponse<Book[]> = await axios.get(
       "http://localhost:3000/api/books/"
@@ -36,8 +41,26 @@ const BookPage: React.FC = () => {
   }
 
   const handleOk = () => {
+    const newBook: Book = {
+      id: improvedBooks.length + 1,
+      title,
+      author,
+      description,
+      image: cover,
+    }
+
+    if (title && author && description && cover) {
+      axios.post("http://localhost:3000/api/books/", newBook)
+      .then((response) => {
+        console.log(response);
+        fetchBooks();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
     setIsModalOpen(false);
   }
+}
 
   const handleCancel = () => {
     setIsModalOpen(false);
@@ -60,19 +83,35 @@ const BookPage: React.FC = () => {
         <form>
           <div className="flex flex-col">
             <label htmlFor="title" className="mb-4">Title</label>
-              <input type="text" name="title" className="mb-4 py-2 px-2 outline-black rounded-lg border-2 border-gray-500" id="title" placeholder="Ex. Software" />
+              <input type="text" name="title" className="mb-4 py-2 px-2 outline-black rounded-lg border-2 border-gray-500" id="title" 
+              placeholder="Ex. Software" 
+              onChange={(e) => setTitle(e.target.value)}
+              value={title}
+              />
           </div>
           <div className="flex flex-col">
             <label htmlFor="author" className="mb-4">Author</label>
-            <input type="text" name="author" className="mb-4 py-2 px-2 outline-black rounded-lg border-2 border-gray-500" id="author" placeholder="Ex. John Carter"/>
+            <input type="text" name="author" className="mb-4 py-2 px-2 outline-black rounded-lg border-2 border-gray-500" id="author" 
+            placeholder="Ex. John Carter"
+            onChange={(e) => setAuthor(e.target.value)}
+            value={author}
+            />
           </div>
           <div className="flex flex-col">
             <label htmlFor="description">Description</label>
-            <textarea name="description" className="mb-4 py-2 px-2 outline-black rounded-lg border-2 border-gray-500" id="description" placeholder="Ex. The book that" />
+            <textarea name="description" className="mb-4 py-2 px-2 outline-black rounded-lg border-2 border-gray-500" id="description" 
+            placeholder="Ex. The book that" 
+            onChange={(e) => setDescription(e.target.value)}
+            value={description}
+            />
           </div>
           <div className="flex flex-col">
             <label htmlFor="cover">Cover URL</label>
-            <input type="text" name="cover" className="mb-4 py-2 px-2 outline-black rounded-lg border-2 border-gray-500" id="cover" placeholder="Ex. https://ImageURL.com"/>
+            <input type="text" name="cover" className="mb-4 py-2 px-2 outline-black rounded-lg border-2 border-gray-500" id="cover" 
+            placeholder="Ex. https://ImageURL.com"
+            onChange={(e) => setCover(e.target.value)}
+            value={cover}
+            />
           </div>
         </form>
       </Modal>
