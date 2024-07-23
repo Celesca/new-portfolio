@@ -1,4 +1,4 @@
-import { Button, Layout, List, theme } from "antd";
+import { Button, Layout, List, Modal, theme } from "antd";
 import { Content, Footer, Header } from "antd/es/layout/layout";
 import { BookOutlined } from "@ant-design/icons";
 import { useEffect, useState } from "react";
@@ -12,6 +12,7 @@ const BookPage: React.FC = () => {
   } = theme.useToken();
 
   const [improvedBooks, setImprovedBooks] = useState<Book[]>([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const fetchBooks = async () => {
     const response: AxiosResponse<Book[]> = await axios.get(
@@ -30,6 +31,18 @@ const BookPage: React.FC = () => {
     fetchBooks();
   }, []);
 
+  const showModal = () => {
+    setIsModalOpen(true);
+  }
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  }
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  }
+
   return (
     <Layout>
       <Header className="text-2xl pl-4 pt-6 font-bold text-black bg-white">
@@ -40,8 +53,29 @@ const BookPage: React.FC = () => {
       </Header>
 
       <div className="flex justify-end pr-16 pt-8">
-        <Button type="primary">เพิ่มหนังสือใหม่</Button>
+        <Button type="primary" onClick={showModal}>เพิ่มหนังสือใหม่</Button>
       </div>
+
+      <Modal title="Add new book" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+        <form>
+          <div className="flex flex-col">
+            <label htmlFor="title">Title</label>
+            <input type="text" className="border-solid" name="title" id="title" placeholder="Ex. Software" />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="author">Author</label>
+            <input type="text" name="author" id="author" placeholder="Ex. John Carter"/>
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="description">Description</label>
+            <textarea name="description" id="description" placeholder="Ex. The book that" />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="cover">Cover URL</label>
+            <input type="text" name="cover" id="cover" placeholder="Ex. https://ImageURL.com"/>
+          </div>
+        </form>
+      </Modal>
 
       <Content style={{ margin: "0 16px" }}>
         <div
@@ -55,7 +89,7 @@ const BookPage: React.FC = () => {
         >
           <div>
             <h1 className="text-2xl pl-4 underline font-semibold">
-              หนังสือพัฒนาตนเอง
+              หนังสือทั้งหมด
             </h1>
             <div>
               {!improvedBooks?.length ? (
