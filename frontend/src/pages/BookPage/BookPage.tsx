@@ -19,6 +19,8 @@ const BookPage: React.FC = () => {
   const [author, setAuthor] = useState("");
   const [description, setDescription] = useState("");
   const [cover, setCover] = useState("");
+  const [year, setYear] = useState<string>("");
+  const [category, setCategory] = useState<string>("");
 
   const fetchBooks = async () => {
     const response: AxiosResponse<Book[]> = await axios.get(
@@ -42,6 +44,15 @@ const BookPage: React.FC = () => {
     setIsModalOpen(true);
   }
 
+  const clearForm = () => {
+    setTitle("");
+    setAuthor("");
+    setDescription("");
+    setCover("");
+    setYear("");
+    setCategory("");
+  }
+
   const handleOk = () => {
     const newBook: Book = {
       id: improvedBooks.length + 1,
@@ -56,10 +67,8 @@ const BookPage: React.FC = () => {
       .then((response) => {
         console.log(response);
         fetchBooks();
-        setTitle("");
-        setAuthor("");
-        setDescription("");
-        setCover("");
+        clearForm();
+
         Swal.fire({
           title: "Success!",
           text: "You added new book!",
@@ -73,10 +82,7 @@ const BookPage: React.FC = () => {
           text: "Failed to add new book!",
           icon: "error"
         });
-        setTitle("");
-        setAuthor("");
-        setDescription("");
-        setCover("");
+        clearForm();
       });
     setIsModalOpen(false);
   }
