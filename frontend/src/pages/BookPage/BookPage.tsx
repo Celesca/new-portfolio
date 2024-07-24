@@ -60,6 +60,8 @@ const BookPage: React.FC = () => {
       author,
       description,
       image: cover,
+      year: parseInt(year),
+      category
     }
 
     if (title && author && description && cover) {
