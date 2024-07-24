@@ -22,7 +22,7 @@ bookRouter.post('/books', (req: Request, res: Response) => {
     (error) => {
       if (error) {
         res.status(500).send(error.message);
-        return;
+        return error.message;
       }
       res.status(201).send('Book added!');
     },

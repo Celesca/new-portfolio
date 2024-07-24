@@ -53,47 +53,37 @@ const BookPage: React.FC = () => {
     setCategory("");
   }
 
-  const handleOk = () => {
+  const handleOk = async () => {
     const newBook: Book = {
-      id: improvedBooks.length + 1,
       title,
       author,
       description,
       image: cover,
-      year: parseInt(year),
+      year: year,
       category
     }
 
-    if (title && author && description && cover) {
-      axios.post("http://localhost:3000/api/books/", newBook)
-      .then((response) => {
-        console.log(response);
+    try {
+      if (!title || !author || !description || !cover || !year || !category) {
+        Swal.fire("Error", "Please fill all fields", "error");
+        return;
+      } 
+      const response = await axios.post("http://localhost:3000/api/books/", newBook, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (response.status === 201) {
+        Swal.fire("Success", "Book added!", "success");
+        setIsModalOpen(false);
         fetchBooks();
         clearForm();
+      }
+    }
 
-        Swal.fire({
-          title: "Success!",
-          text: "You added new book!",
-          icon: "success"
-        });
-      })
-      .catch((error) => {
-        console.error(error);
-        Swal.fire({
-          title: "Error!",
-          text: "Failed to add new book!",
-          icon: "error"
-        });
-        clearForm();
-      });
-    setIsModalOpen(false);
-  }
-  else {
-    Swal.fire({
-      title: "Error!",
-      text: "Please fill all fields!",
-      icon: "error"
-    });
+    catch (error) {
+      Swal.fire("Error", "Failed to add book", "error");
+      console.log(error);
   }
 }
 
@@ -159,7 +149,7 @@ const BookPage: React.FC = () => {
           <div className="flex flex-col">
             <label htmlFor="category">Category</label>
             <input type="text" name="category" className="mb-4 py-2 px-2 outline-black rounded-lg border-2 border-gray-500" id="category" 
-            placeholder="Ex. Software"
+            placeholder="Ex. AI"
             onChange={(e) => setCategory(e.target.value)}
             value={category}
             />
