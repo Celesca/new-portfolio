@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import axios, { AxiosResponse } from "axios";
 import { Book } from "../../models/Book";
 import OneBook from "../../components/OneBook";
+import Swal from "sweetalert2";
 
 const BookPage: React.FC = () => {
   const {
@@ -24,6 +25,7 @@ const BookPage: React.FC = () => {
       "http://localhost:3000/api/books/"
     );
     console.log(response);
+
     if (response.status !== 200) {
       console.error("Failed to fetch books");
       return;
@@ -54,11 +56,32 @@ const BookPage: React.FC = () => {
       .then((response) => {
         console.log(response);
         fetchBooks();
+        setTitle("");
+        setAuthor("");
+        setDescription("");
+        setCover("");
+        Swal.fire({
+          title: "Success!",
+          text: "You added new book!",
+          icon: "success"
+        });
       })
       .catch((error) => {
         console.error(error);
+        Swal.fire({
+          title: "Error!",
+          text: "Failed to add new book!",
+          icon: "error"
+        });
       });
     setIsModalOpen(false);
+  }
+  else {
+    Swal.fire({
+      title: "Error!",
+      text: "Please fill all fields!",
+      icon: "error"
+    });
   }
 }
 
