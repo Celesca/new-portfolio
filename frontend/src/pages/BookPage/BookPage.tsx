@@ -146,6 +146,22 @@ const BookPage: React.FC = () => {
             value={cover}
             />
           </div>
+          <div className="flex flex-col">
+            <label htmlFor="year">Year</label>
+            <input type="text" name="year" className="mb-4 py-2 px-2 outline-black rounded-lg border-2 border-gray-500" id="year" 
+            placeholder="Ex. 2024"
+            onChange={(e) => setYear(e.target.value)}
+            value={year}
+            />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="category">Category</label>
+            <input type="text" name="category" className="mb-4 py-2 px-2 outline-black rounded-lg border-2 border-gray-500" id="category" 
+            placeholder="Ex. Software"
+            onChange={(e) => setCategory(e.target.value)}
+            value={category}
+            />
+          </div>
         </form>
       </Modal>
 
