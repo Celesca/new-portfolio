@@ -73,6 +73,10 @@ const BookPage: React.FC = () => {
           text: "Failed to add new book!",
           icon: "error"
         });
+        setTitle("");
+        setAuthor("");
+        setDescription("");
+        setCover("");
       });
     setIsModalOpen(false);
   }
