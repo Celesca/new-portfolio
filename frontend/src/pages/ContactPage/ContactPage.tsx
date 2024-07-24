@@ -1,8 +1,7 @@
 import { Layout } from 'antd';
-import './HomePage.css';
 import { Footer } from 'antd/es/layout/layout';
 
-const HomePage: React.FC = () => {
+const ContactPage: React.FC = () => {
   
   return (
     <Layout>
@@ -20,4 +19,4 @@ const HomePage: React.FC = () => {
   )
 }
 
-export default HomePage
+export default ContactPage
