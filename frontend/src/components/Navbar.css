@@ -5,6 +5,14 @@
 /* Add your custom styles here */
 .navbar-container {
     background-color: #4D3D64;
+    position: fixed;
+    
+}
+
+.nav-text {
+    padding: 8px 16px;
+    margin-right: 8px;
+    border-radius: 10px;
 }
 
 .nav-text:hover {

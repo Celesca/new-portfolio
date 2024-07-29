@@ -8,14 +8,14 @@ const Navbar = () => {
         </div>
         <div>
             <ul className="flex justify-end pt-4 pr-8">
-                <li className="pr-4">
-                    <a href="/" className="hover:text-blue-500 text-white pr-8 nav-text">Home</a>
+                <li className="pr-4 ">
+                    <a href="/" className="hover:text-blue-500 text-white nav-text">Home</a>
                 </li>
                 <li className="pr-4">
-                    <a href="/book" className="hover:text-blue-500 text-white pr-8">Book</a>
+                    <a href="/book" className="hover:text-blue-500 text-white nav-text">Book</a>
                 </li>
                 <li className="pr-4">
-                    <a href="/contact" className="hover:text-blue-500 text-white ">Contact</a>
+                    <a href="/contact" className="hover:text-blue-500 text-white nav-text">Contact</a>
                 </li>
             </ul>
         </div>
