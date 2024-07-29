@@ -2,7 +2,7 @@ import './Navbar.css'
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center pb-4">
+    <nav className="flex items-center pb-4 navbar-container">
         <div className="ps-8 mr-16">
             <h1 className="text-lg pt-4">Celescadev</h1>
         </div>
