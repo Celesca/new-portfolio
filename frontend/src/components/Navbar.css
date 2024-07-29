@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Add your custom styles here */
+.navbar-container {
+    background-color: #4D3D64;
+}
+
+.nav-text:hover {
+    background-color: aquamarine;
+
+}
