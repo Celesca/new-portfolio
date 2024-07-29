@@ -1,3 +1,33 @@
 .hero-image {
     border-radius: 100px;
 }
+
+html {
+    scroll-behavior: smooth;
+  }
+  
+.homepage-container {
+  background-color: white;
+      height: 200vh;
+}
+
+.header-container {
+
+  width: 100%;
+}
+
+
+@keyframes spin {
+    to {
+        transform: rotateY(2turn);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: scroll()) {
+      .homepage-image {
+        animation: spin linear both;
+        animation-timeline: scroll();
+      } 
+    }
+}
