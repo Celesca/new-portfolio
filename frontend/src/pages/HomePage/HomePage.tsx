@@ -4,7 +4,6 @@ import { Footer } from 'antd/es/layout/layout';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-import Starback from 'starback';
 
 const HomePage: React.FC = () => {
   
