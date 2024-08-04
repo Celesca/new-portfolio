@@ -15,6 +15,16 @@ const HomePage: React.FC = () => {
 
   return (
     <Layout className="homepage-container">
+
+    <div className="night">
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+    </div>
+
+
       
       <Header />
       <AboutMe />
