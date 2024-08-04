@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add your custom styles here */
+.navbar-container {
+    background-color: #4D3D64;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    
+}
+
+.nav-text {
+    padding: 8px 8px;
+    margin-right: 8px;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.nav-text:hover {
+    transition: 0.3s linear;
+    background-color: aquamarine;
+    text-decoration: none;
+}

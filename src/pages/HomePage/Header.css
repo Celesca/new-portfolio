@@ -1,0 +1,17 @@
+.header-container {
+
+}
+
+@media screen and (max-width: 600px) {
+  .header-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .header-container {
+    display: flex;
+    flex-direction: row;
+  }
+}
