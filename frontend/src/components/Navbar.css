@@ -6,6 +6,7 @@
 .navbar-container {
     background-color: #4D3D64;
     position: fixed;
+    width: 100%;
     
 }
 
@@ -16,6 +17,6 @@
 }
 
 .nav-text:hover {
+    transition: 0.3s linear;
     background-color: aquamarine;
-
 }
