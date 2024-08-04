@@ -6,8 +6,8 @@ const AboutMe = () => {
     <>
         <div className="flex flex-col items-center py-24">
             <h1 className="text-white text-4xl my-24" data-aos="zoom-in-up">About me</h1>
-            <i className="nes-mario" data-aos="zoom-in-up"></i>
-            <div data-aos="fade-right" className="nes-container is-dark with-title flex flex-col lg:flex-row justify-between items-center lg:justify-around w-4/6">
+            <i className="nes-mario" data-aos="zoom-in-up" data-aos-duration="700"></i>
+            <div data-aos="fade-right" data-aos-duration="1000" className="nes-container is-dark with-title flex flex-col lg:flex-row justify-between items-center lg:justify-around w-4/6">
                 <img src="https://stickershop.line-scdn.net/stickershop/v1/product/13505512/LINEStorePC/main.png?v=1" alt="homepage" className="w-1/2 h-1/3 lg:w-1/4 lg:h-1/3"></img>
                 <div className="lists lg:w-1/2">
                     <ul className="list-disc leading-9">
