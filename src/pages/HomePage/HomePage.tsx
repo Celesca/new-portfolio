@@ -30,7 +30,7 @@ const HomePage: React.FC = () => {
       <AboutMe />
       
     <Footer style={{ textAlign: 'center', backgroundColor:'none'}}>
-      Ant Design ©{new Date().getFullYear()} Created by Celesca
+     © {new Date().getFullYear()}   Created by Celesca
     </Footer>
   </Layout>
   )
