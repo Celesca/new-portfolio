@@ -13,7 +13,9 @@ const Header = () => {
       <div className="text-container flex flex-col mt-32">
         <img src="love-always-wins.png" width="50"></img>
         <h1 className="text-xl text-white my-4" data-aos="fade-up">Hello. I'm <span className="font-bold">Celesca. </span> </h1>
-        <h2 className="text-md text-white my-4">Computer Engineering, KMUTT</h2>
+        <h2 className="text-md text-white mt-4 mb-8" data-aos="fade-up" data-aos-duration="700">Computer Engineering, KMUTT</h2>
+        <button type="button" data-aos="fade-up"
+            data-aos-duration="900" className="nes-btn is-primary w-48">Download CV</button>
       </div>
     </div>
   </div>
