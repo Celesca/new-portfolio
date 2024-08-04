@@ -7,7 +7,7 @@ const Navbar = () => {
             <h1 className="text-lg pt-4">Celescadev</h1>
         </div>
         <div>
-            <ul className="flex justify-end pt-4 pr-8">
+            <ul className="flex justify-end pt-8 pr-8">
                 <li className="pr-4 ">
                     <a href="/" className="hover:text-blue-500 text-white nav-text">Home</a>
                 </li>

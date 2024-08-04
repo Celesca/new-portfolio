@@ -15,6 +15,7 @@ const HomePage: React.FC = () => {
 
   return (
     <Layout className="homepage-container">
+      
       <Header />
 
       <AboutMe />

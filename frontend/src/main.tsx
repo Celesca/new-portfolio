@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Navbar from './components/Navbar.tsx';
 import HomePage from './pages/HomePage/HomePage.tsx'
 import ContactPage from './pages/ContactPage/ContactPage.tsx';
+import 'nes.css/css/nes.min.css';
 
 const router = createBrowserRouter([
   {

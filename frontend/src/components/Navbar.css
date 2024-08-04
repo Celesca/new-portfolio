@@ -11,12 +11,14 @@
 }
 
 .nav-text {
-    padding: 8px 16px;
+    padding: 8px 8px;
     margin-right: 8px;
     border-radius: 10px;
+    font-size: 1rem;
 }
 
 .nav-text:hover {
     transition: 0.3s linear;
     background-color: aquamarine;
+    text-decoration: none;
 }
