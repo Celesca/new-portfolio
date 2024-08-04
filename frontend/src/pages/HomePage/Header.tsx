@@ -1,5 +1,6 @@
 import 'nes.css/css/nes.min.css';
 import './Header.css';
+import './HomePage.css'
 
 const Header = () => {
   return (

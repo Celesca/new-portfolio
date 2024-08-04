@@ -17,10 +17,9 @@ const HomePage: React.FC = () => {
     <Layout className="homepage-container">
       
       <Header />
-
       <AboutMe />
       
-    <Footer style={{ textAlign: 'center', backgroundColor: 'green' }}>
+    <Footer style={{ textAlign: 'center', backgroundColor:'none'}}>
       Ant Design ©{new Date().getFullYear()} Created by Celesca
     </Footer>
   </Layout>

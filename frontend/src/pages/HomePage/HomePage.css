@@ -8,12 +8,8 @@ html {
     scroll-behavior: smooth;
   }
   
-.homepage-container {
-  background-color: white;
-      height: 200vh;
-}
 
-.header-container {
+.homepage-container {
 
   background-image: url("cloud_background.jpg");
 
@@ -24,8 +20,6 @@ html {
     background-size: cover;
 
   width: 100%;
-
-  height: 200vh;
 }
 
 
