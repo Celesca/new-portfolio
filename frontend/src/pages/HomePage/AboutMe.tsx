@@ -8,10 +8,12 @@ const AboutMe = () => {
             <h1 className="text-white text-2xl">About me</h1>
             <div className="nes-container is-dark with-title flex justify-around w-1/2">
                 <img src="https://i.redd.it/35j9y5v43ro71.png" alt="homepage" width="200"></img>
-                <div className="bg-green-400 w-3/5">
-                    <p className="title">Sawit Koseeyaumporn (Folk)</p>
-                    <p>Computer Engineering, KMUTT</p>
-                    <p>Beta Microsoft Learn Student Ambassador</p>
+                <div className=" w-3/5">
+                    <ol>
+                        <p className="title">Sawit Koseeyaumporn (Folk)</p>
+                        <p>Computer Engineering, KMUTT</p>
+                        <p>Beta Microsoft Learn Student Ambassador</p>
+                    </ol>
                     
                 </div>
             </div>

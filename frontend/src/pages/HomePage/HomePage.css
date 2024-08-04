@@ -16,8 +16,8 @@ html {
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: repeat-x;
+    background-size: contain;
 
   width: 100%;
 }
@@ -44,6 +44,8 @@ html {
     width: 100%;
     height: 100%;
     transform: rotateZ(40deg);
+    overflow: hidden;
+    pointer-events: none;
 }
 
 .star {
