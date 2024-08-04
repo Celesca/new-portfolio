@@ -24,10 +24,10 @@ const Header = () => {
         <img src="love-always-wins.png" data-aos="fade-up" width="50"></img>
         <h1 className="md:text-xl sm:text-md text-white my-4" data-aos="fade-up" data-aos-duration="700">Hello. I'm <span className="font-bold text-green-400">Celesca. </span> </h1>
         <h2 className="md:text-md sm:text-sm text-white mt-4 mb-8" data-aos="fade-up" data-aos-duration="1000">Computer Engineering, <span className="font-bold text-orange-500">KMUTT</span></h2>
-        <button type="button" data-aos="fade-up"
-            data-aos-duration="1300" className="nes-btn is-primary w-48"
-            onClick={downloadClick}
-            >Download CV</button>
+          <button type="button" data-aos="fade-up"
+              data-aos-duration="1300" className="nes-btn is-primary w-48"
+              onClick={downloadClick}
+              >Download CV</button>
       </div>
     </div>
   </div>
