@@ -13,6 +13,7 @@ const AboutMe = () => {
                         <li className="title">Sawit Koseeyaumporn (Folk)</li>
                         <li>Computer Engineering, <span className="text-orange-500">KMUTT</span></li>
                         <li><span className="text-blue-600">Beta</span> Microsoft Learn Student Ambassador</li>
+                        <li>Software Engineer</li>
                     </ul>
                     
                 </div>
