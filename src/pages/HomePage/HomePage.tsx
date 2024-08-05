@@ -6,6 +6,7 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import Header from './Header';
 import AboutMe from './AboutMe';
+import Work from './Work';
 
 const HomePage: React.FC = () => {
   
@@ -28,9 +29,10 @@ const HomePage: React.FC = () => {
       
       <Header />
       <AboutMe />
+      <Work />
       
     <Footer style={{ textAlign: 'center', backgroundColor:'none'}}>
-      Ant Design ©{new Date().getFullYear()} Created by Celesca
+     © {new Date().getFullYear()}   Created by Celesca
     </Footer>
   </Layout>
   )
