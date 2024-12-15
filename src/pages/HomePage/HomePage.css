@@ -9,7 +9,7 @@ html {
 
 .homepage-container {
 
-    background-image: url("cloud-background.jpg");
+    background-image: url("/cloud-background.jpg");
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
