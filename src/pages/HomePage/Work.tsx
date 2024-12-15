@@ -10,7 +10,7 @@ const Work = () => {
         data-aos="fade-up"
         data-aos-duration="1000">My Works</h1>
 
-        <Carousel />
+        <Carousel images={['kbtg.png', 'scgjwd.jpg', 'r2m.jpg', 'abu.jpg', 'microsoft.jpg']} />
        
 
     </div>
