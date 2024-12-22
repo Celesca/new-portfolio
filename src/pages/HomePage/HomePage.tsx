@@ -1,12 +1,12 @@
 import { Layout } from 'antd';
 import './HomePage.css';
-import { Footer } from 'antd/es/layout/layout';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import Header from './Header';
 import AboutMe from './AboutMe';
 import Work from './Work';
+import FooterSection from '../../components/FooterSection';
 
 const HomePage: React.FC = () => {
   
@@ -31,9 +31,7 @@ const HomePage: React.FC = () => {
       <AboutMe />
       <Work />
       
-    <Footer style={{ textAlign: 'center', backgroundColor:'none'}}>
-     © {new Date().getFullYear()}   Created by Celesca
-    </Footer>
+    <FooterSection />
   </Layout>
   )
 }

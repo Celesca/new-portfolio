@@ -17,13 +17,13 @@ const Header = () => {
   return (
     <div className="flex flex-col lg:flex-row  mt-8 pt-16">
     <div className="flex justify-center p-16 w-full">
-      <img src="https://i.redd.it/35j9y5v43ro71.png" alt="homepage" 
+      <img src="/myself.jpg" alt="homepage" 
       className="homepage-image rounded-full w-64"/>
     </div>
     <div className="w-full">
       <div className="flex flex-col items-center lg:items-start lg:mt-32">
         <img src="love-always-wins.png" data-aos="fade-up" width="50"></img>
-        <h1 className="md:text-xl sm:text-md text-white my-4" data-aos="fade-up" data-aos-duration="700">Hello. My name is <span className="font-bold text-green-400">Celesca. </span> </h1>
+        <h1 className="md:text-xl sm:text-md text-white my-4" data-aos="fade-up" data-aos-duration="700">Hello. My name is <span className="font-bold text-green-400">Folk. </span> </h1>
         <span className="md:text-xl sm:text-md text-white my-4" data-aos="fade-up" data-aos-duration="700">I'm &nbsp;
         <TypeAnimation
             sequence={[
