@@ -32,8 +32,13 @@ const BookPage: React.FC = () => {
       <div className="mt-12 p-20 bg-gray-200/[.80] w-full">
 
         <h1 className="text-2xl text-start pb-12">Artificial Intelligence</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          <OneBook title="AI for Everyone" author="Andrew Ng" image="ai-for-everyone.jpg" />
+        <div className="flex flex-col items-center justify-center">
+          <div className="bg-pink-400 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-24 p-12">
+            <OneBook book={{ title: "AI for Everyone", author: "Andrew Ng", image: "https://api.chulabook.com/images/pid-189579.JPG" }} />
+            <OneBook book={{ title: "AI Superpowers", author: "Kai-Fu Lee", image: "https://api.chulabook.com/images/pid-189579.JPG" }} />
+            <OneBook book={{ title: "AI for Marketing", author: "Jim Sterne", image: "https://api.chulabook.com/images/pid-189579.JPG" }} />
+            <OneBook book={{ title: "AI for Marketing", author: "Jim Sterne", image: "https://api.chulabook.com/images/pid-189579.JPG" }} />
+          </div>
         </div>
       </div>
 
