@@ -14,11 +14,11 @@ const OneBook: React.FC<OneBookProps> = ({ book }) => {
   return (
     <Card
     hoverable
-    style={{ width: 230 }}
+    className="w-72"
     cover={<img alt="example" src={image} className="p-4" />}
-  >
-    <Meta title={title} description={author} />
-  </Card>
+    >
+    <Meta title={<span style={{ whiteSpace: 'normal' }} className="text-sm">{title}</span>} description={author} />
+    </Card>
   )
 }
 
